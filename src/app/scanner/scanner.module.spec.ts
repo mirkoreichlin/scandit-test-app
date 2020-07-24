@@ -1,14 +1,14 @@
 import {async, TestBed} from '@angular/core/testing';
-import {SubModule} from './sub.module';
+import {ScannerModule} from './scanner.module';
 
-describe('SubModule', () => {
+describe('ScannerModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SubModule]
+      imports: [ScannerModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(SubModule).toBeDefined();
+    expect(ScannerModule).toBeDefined();
   });
 });
