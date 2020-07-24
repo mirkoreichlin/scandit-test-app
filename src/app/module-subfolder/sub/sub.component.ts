@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ScanSettings, Barcode, CameraSettings, ScanResult } from 'scandit-sdk-angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-sub-root',
+  templateUrl: './sub.component.html',
+  styleUrls: ['./sub.component.scss']
 })
-export class AppComponent {
+export class SubComponent {
   public scanSettings = new ScanSettings({
     enabledSymbologies: [Barcode.Symbology.CODE128],
     maxNumberOfCodesPerFrame: 1,
