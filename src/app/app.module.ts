@@ -1,31 +1,30 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {ScanditSdkModule} from 'scandit-sdk-angular';
 import {RouterModule, Routes} from '@angular/router';
-
-const LICENSE_KEY = 'license-key';
-const ENGINE_LOCATION = '/assets/scandit/';
+import {HomeComponent} from './home.component';
+import {ScannerModule} from './scanner/scanner.module';
 
 const ROUTES_LIST: Routes = [
   {
+    path: 'lazy',
+    loadChildren: () => import('./lazy-one/lazy.module').then(mod => mod.LazyModule)
+  },
+  {
     path: '',
-    loadChildren: () => import('./scanner/scanner.module').then(mod => mod.ScannerModule)
-  }
+    component: HomeComponent
+  },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES_LIST),
-    ScanditSdkModule.forRoot(LICENSE_KEY, {
-      engineLocation: ENGINE_LOCATION,
-      preloadEngine: true,
-      preloadBlurryRecognition: true
-    }),
+    ScannerModule,
+    RouterModule.forRoot(ROUTES_LIST)
   ],
   providers: [],
   bootstrap: [AppComponent]
