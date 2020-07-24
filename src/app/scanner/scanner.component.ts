@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ScanSettings, Barcode, CameraSettings, ScanResult } from 'scandit-sdk-angular';
 
 @Component({
+  selector: 'app-scanner',
   templateUrl: './scanner.component.html'
 })
 export class ScannerComponent {
